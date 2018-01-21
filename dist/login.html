@@ -1,0 +1,149 @@
+<!doctype html>
+<html ng-app='myApp'>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="description" content=""> 
+    <meta http-equiv="cache-control" content="private, max-age=0, no-cache"> 
+    <meta http-equiv="pragma" content="no-cache"> 
+    <meta http-equiv="expires" content="0">
+    <title>I am LYC</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,600i,700,700i,800|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+        <section class="login-wrap">
+            <div class="left-section" id="left">
+                <div class="overlap"></div>
+                <div class="content">
+                    <div class="table-cell-content">
+                        <figure>
+                            <img src="images/whitelogo.png" alt=""/>
+                        </figure>
+                        <h1>I AM LYC</h1>
+                        <p>I Am LVC will empower you to know you are lovable, valuable, and capable. When you know this, you will treat yourself with love, kindness, compassion, and respect. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-section" id="right">
+                <div class="content">
+                    <div class="table-cell-content">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2">
+                                <div class="panel panel-login">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <a href="#" class="active" id="login-form-link">LOGIN</a>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <a href="#" id="register-form-link">REGISTER</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <form id="login-form"  method="post" role="form" style="display: block;">
+                                                    <div class="form-group">
+                                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                                    </div>
+                                                    <div class="form-group text-center">
+                                                        <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                                        <label for="remember"> Remember Me</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn blue-border" value="Log In">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="text-center">
+                                                                    <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <form id="register-form"  method="post" role="form" style="display: none;">
+                                                    <div class="form-group">
+                                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn blue-border" value="Register">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        console.log("hi")
+            function setHeight() {
+                windowHeight = $(window).innerHeight();
+                $('#left').css('min-height', windowHeight);
+                $('#right').css('min-height', windowHeight);
+                $('.content').css('min-height', windowHeight);
+            };
+            setHeight();
+            
+            $(window).resize(function() {
+                setHeight();
+            });
+            });
+              $('#login-form-link').click(function(e) {
+                $("#login-form").delay(100).fadeIn(100);
+                $("#register-form").fadeOut(100);
+                $('#register-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+            $('#register-form-link').click(function(e) {
+                $("#register-form").delay(100).fadeIn(100);
+                $("#login-form").fadeOut(100);
+                $('#login-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+            
+    </script>
+  </body>
+  </html>
